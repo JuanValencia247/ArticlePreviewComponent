@@ -1,0 +1,186 @@
+@use 'variables' as v;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 13px;
+    background-color: v.$Light-Grayish-Blue;
+    font-family: v.$Font-Manrope;
+}
+.main-container{
+    // border: 1px solid;
+    background-color: white;
+    margin: 75px 25px;
+    width: 330px;
+    height: 515px;
+    border-radius: 15px;
+    position: relative;
+    .section-container1{
+        background-image: url('/images/drawers.jpg');
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position-y: -20px;
+        border-radius: 15px 15px 0 0 ;
+
+    }
+    .section-container2{
+        // border: 1px solid;
+        
+        &__title{
+            color: v.$Very-Dark-Grayish-Blue;
+            font-size: 1.24em;
+            line-height: 24px;
+            margin: 30px 30px 12px;
+        }
+        &__description{
+            color: v.$Desaturated-Dark-Blue;
+            margin: 0 42px 30px 30px;
+            font-size: 1em;
+            line-height: 20px;
+        }
+    }
+    .section-container3{
+        //Content 1
+        &__content1{
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            width: 30px;
+            height: 30px;
+            background-color: v.$Light-Grayish-Blue;
+            border-radius: 50%;
+            padding: 7px 8px;
+            z-index: 1;
+        }
+        &__content1:hover{
+            cursor: pointer;
+            background-color: v.$Desaturated-Dark-Blue;
+        }
+        &__content1:hover path{
+           fill: white;
+        }
+
+        //Content 2
+        &__content2{
+            display: flex;
+            margin: 0 30px;
+        }
+        &__content2-img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        &__content2-name{
+            color: v.$Very-Dark-Grayish-Blue;
+            margin: 4px 0 2px 15px;
+            font-weight: 700;
+        }
+        &__content2-date{
+            margin-left: 15px;
+            color: v.$Grayish-Blue;
+        }
+
+        //Content 3
+        &__content3{
+            background-color: v.$Very-Dark-Grayish-Blue;
+            width: 100%;
+            height: 80px;
+            padding: 20px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            border-radius: 0 0 12px 12px;
+            position: absolute;
+            bottom: 0;
+        }
+        .show{
+            display: flex;
+        }
+        &__content3-share{
+            text-transform: uppercase;
+            color: v.$Grayish-Blue;
+            letter-spacing: 4px;
+            margin-right: 10px;
+            font-weight: 500s;
+        }
+        &__content3-link{
+            margin: 0 8px;
+        }
+    }
+}
+// ================ Desktop =================//
+@media (min-width: 900px){
+    .main-container{
+        margin: 260px auto;
+        width: 735px;
+        height: 280px;
+        display: flex;
+        .section-container1{
+            height: 100%;
+            background-position-y: unset;
+            border-radius: 12px 0 0 12px;
+        
+        }
+        .section-container2{
+            padding: 0px 40px 30px 30px;
+            &__title{
+               margin-bottom: 15px;
+               font-size: 1.4em;
+               line-height: 26px;
+            }
+            &__description{
+               margin-bottom: 20px;
+               font-size: 0.89em;
+            }
+        }
+        .section-container3{
+            //Content 1
+            &__content1{
+                height: 40px;
+                width: 40px;
+                right: 46px;
+                bottom: 32px;
+                padding: 11px 12px;
+            }
+
+            //Content 3
+            &__content3{
+                width: 250px;
+                height: 56px;
+                bottom: 94px;
+                right: -60px;
+                border-radius: 8px;
+            }
+            &__content3::after{
+                content: "";
+                border: 10px solid;
+                border-color: v.$Very-Dark-Grayish-Blue transparent  transparent ;
+                position: absolute;
+                left: 115px;
+                top: 100%;
+            }
+            &__content3-share{
+                margin-left: 8px;
+            }
+            &__content3-links{
+                margin: 0 1px;
+               
+            }
+
+        }
+    } 
+}
+// ================= Footer ====================== //
+.attribution { 
+    margin-bottom: 20px;
+    font-size: 13px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%);
+    text-decoration: none; }
